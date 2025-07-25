@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Contacts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <h1>Stored Contact Records</h1>
+  <form method="GET" action="/data">
+    <input type="text" name="search" placeholder="Search..." value="{{ search or '' }}">
+    <button type="submit">Search</button>
+</form>
+  <table border="1" cellpadding="5">
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Location</th>
+    </tr>
+    {% for contact in contacts %}
+    <tr>
+      <td>{{ contact.id }}</td>
+      <td>{{ contact.first_name }}</td>
+      <td>{{ contact.last_name }}</td>
+      <td>{{ contact.email }}</td>
+      <td>{{ contact.mobile }}</td>
+      <td>{{ contact.location }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <br>
+  <a href="/">Add New Contact</a>
+</body>
+</html>
+

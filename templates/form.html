@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real Estate Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  
+  <h1>Add New Contact</h1>
+  <form method="POST" action="/">
+    <label>First Name:</label>
+    <input type="text" name="first_name" pattern="[A-Za-z\s]+" title="Only letters allowed" required><br></br>
+
+
+    <label>Last Name:</label>
+    <input type="text" name="last_name" pattern="[A-Za-z\s]+" title="Only letters allowed" required>
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" required><br><br>
+
+    <label>Mobile No (10 digits):</label>
+    <input type="text" name="mobile" pattern="\d{10}" title="10 digit mobile number only" required><br><br>
+
+    <label>Location:</label>
+    <input type="text" name="location" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <br>
+  <a href="/data">View All Contacts</a>
+</body>
+</html>
